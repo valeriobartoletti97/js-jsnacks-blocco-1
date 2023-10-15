@@ -1,11 +1,13 @@
 let resultEl = document.querySelector('.d-none');
-const buttonEl = document.querySelector('.btn');
+const buttonEl = document.querySelector('.btn-success');
 let data = document.getElementById('data');
-
+const printBtn = document.querySelector('.btn-primary');
+let userData;
+let numbers = [];
 buttonEl.addEventListener('click', function(){
-   const userData = parseInt(data.value);
+
+   userData = parseInt(data.value);
    console.log(userData);
-   let numbers = [];
 
    for (let i = 0; i < userData; i++){
     numbers.push(getRndInteger(1, 100));
@@ -20,6 +22,24 @@ buttonEl.addEventListener('click', function(){
         last5.push(numbers)
    }
    console.log(last5);
+   resultEl.classList.remove('d-none');
+})
+printBtn.addEventListener('click', function(){
+    let printData = parseInt(document.getElementById('print').value);
+    console.log(printData);
+    const printEl = document.getElementById('print-container');
+    let numbersPrinted = [];
+    if(printData > userData){
+        printEl.className = 'bg-danger';
+        printEl.innerHTML = 'Gli elementi disponibili sono soltanto ' + userData + ' !'
+    } else{ 
+        for (let b = printData; b > 0 ; b--){
+            numbersPrinted.push(numbers[numbers.length - b]);
+        }
+        console.log(numbersPrinted);
+        printEl.className = 'bg-success'
+        printEl.innerHTML = numbersPrinted
+    }
 })
 
 

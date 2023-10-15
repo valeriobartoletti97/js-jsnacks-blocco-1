@@ -21,7 +21,12 @@
         <button class="btn btn-success mb-3">Send</button>
 
         <!-- contenitore per risultato/ errore -->
-        <div class="alert d-none"></div>
+        <div class="alert d-none">
+            <label for="print">Quanti elementi vuoi stampare?</label>
+            <input type="text" name="print" id="print">
+            <button class="btn btn-primary mb-3">Send</button>
+        </div>
+        <div id="print-container" class="d-none"></div>
     </div>
     <script src="js/script.js"></script>
 </body>
