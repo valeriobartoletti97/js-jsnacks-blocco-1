@@ -5,12 +5,21 @@ let data = document.getElementById('data');
 buttonEl.addEventListener('click', function(){
    const userData = parseInt(data.value);
    console.log(userData);
+   let numbers = [];
 
    for (let i = 0; i < userData; i++){
-    let numbers = [];
     numbers.push(getRndInteger(1, 100));
-    console.log(numbers)
+   };
+   console.log(numbers);
+   let last5 = [];
+   if(numbers.length >= 5 ){
+    for (let c = 5; c > 0; c--){
+     last5.push(numbers[numbers.length - c]);
+    }
+    } else {
+        last5.push(numbers)
    }
+   console.log(last5);
 })
 
 
