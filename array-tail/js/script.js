@@ -8,8 +8,9 @@ buttonEl.addEventListener('click', function(){
 
    userData = parseInt(data.value);
    console.log(userData);
-
-   for (let i = 0; i < userData; i++){
+   if(isNaN(userData)){
+    console.log('Non puoi andare avanti');
+   } else{for (let i = 0; i < userData; i++){
     numbers.push(getRndInteger(1, 100));
    };
    console.log(numbers);
@@ -22,7 +23,8 @@ buttonEl.addEventListener('click', function(){
         last5.push(numbers)
    }
    console.log(last5);
-   resultEl.classList.remove('d-none');
+   resultEl.classList.remove('d-none');}
+   
 })
 printBtn.addEventListener('click', function(){
     let printData = parseInt(document.getElementById('print').value);
